@@ -1,6 +1,6 @@
 # ACI
 
-SCVMM-ACI Powershell Script
+ACI-SCVMM Powershell Script
 
 Automates the steps necessary to generate, copy and install a cert for APIC to SCVMM Communication.
 Script by Joseph Ezerski (joezersk@cisco.com), INSBU - No guarantees on operation! v1.0 Dec 2015
