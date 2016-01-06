@@ -9,7 +9,7 @@ Special thanks to Chris Paggen for the APIC cookie code.
 
 .DESCRIPTION
 
-A quick way to generate a new cert for SCVMM and ACI Integration withoutthe need to remember all the powershell commands. 
+A quick way to generate a new cert for SCVMM and ACI Integration without the need to remember all the powershell commands. 
 Accepts interactive user input to generate the cert on the SCVMM server, and put a copy in the SCVMM Agent folder.  
 Also imports the cert into the local machine personal certstore on the SCVMM system you run it on and mark for export.
 It will file-copy and import the cert to a list of HYPER-V hosts you specify.
@@ -47,7 +47,7 @@ $store = New-Object system.security.cryptography.X509Certificates.X509Store (".\
 $store.Open('ReadWrite')
 ## Find all certs that have an Issuer of my old CA
 $certs = $store.Certificates | ? {$_.Issuer -like "CN=OpflexAgent*"}
-$certs
+$certs | Format-Table Subject, FriendlyName, Thumbprint -AutoSize
 Write-Host "
 If you see the OpflexAgent cert & serial# above, it means I found an existing cert and removed it to avoid redundancy." -foreground "yellow"
 Write-Host "
@@ -56,7 +56,7 @@ If you see nothing, it means there was no prior OpflexAgent certificate generate
 $certs | % {$store.Remove($_)}
 
 #Ask user to generate a certifcate password
-$pfxpasswordinput = Read-Host "We need a password for the PFX Certifcate for SCVMM to speak to APIC securely. Please type it in"
+$pfxpasswordinput = Read-Host -AsSecureString "We need a password for the PFX Certifcate for SCVMM to speak to APIC securely. Please type it in"
 $pfxpassword = ConvertTo-SecureString "$pfxpasswordinput" -AsPlainText -Force
 
 #Ask user for input required to generate the cert
@@ -122,15 +122,17 @@ $certs = $store.Certificates | ? {$_.Issuer -like "CN=OpflexAgent*"}
 #$certs
 $certs | % {$store.Remove($_)}
 
+#Copy the cert and mark for export
 Set-Location C:\Windows\System32
 Copy-Item C:\'Program Files (x86)'\ApicVMMService\OpflexAgent.pfx -Destination \\$h\C$\OpflexAgent.pfx -Force
-Invoke-Command -ComputerName $h -ScriptBlock { Import-PfxCertificate -Exportable -FilePath C:\OpflexAgent.pfx cert:\LocalMachine\My -Password (ConvertTo-SecureString -String "cisco123" -AsPlainText -Force)}
+Invoke-Command -ComputerName $h -ScriptBlock {param($pfxpasswordinput) Import-PfxCertificate -Exportable -FilePath C:\OpflexAgent.pfx cert:\LocalMachine\My -Password (ConvertTo-SecureString $pfxpasswordinput -AsPlainText -Force)|Format-Table Subject, FriendlyName, Thumbprint -AutoSize} -ArgumentList $pfxpasswordinput
 
 Write-Host "DONE COPYING THIS CERT to $h!" -ForegroundColor Green
 }
 
 Write-Host "
-#########
-Ok, the whole process is now complete.  Please check that APIC can now communicate with SCVMM." -ForegroundColor Green
+
+Ok, the whole process is now complete.  Please check that APIC can now communicate with SCVMM." -ForegroundColor Yellow
 
 #End Script
+
