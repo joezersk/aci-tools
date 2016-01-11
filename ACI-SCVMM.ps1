@@ -66,6 +66,9 @@ $state = Read-Host "What is the two-letter state or province for this cert?"
 $locality = Read-Host "What is the locality or city?"
 $myorg = Read-Host "What is the the Organization Name?"
 
+Write-Host "Generate the cert!
+" -ForegroundColor Green
+
 #Actually generate and import the cert into the local certstore with a copy in SCVMM Agent folder
 New-ApicOpflexCert -ValidNotBefore 1/1/2015 -ValidNotAfter 1/1/2021 -Email $email -Country $country -State $state -Locality "$locality" -Organization $myorg -PfxPassword $pfxpassword
 
@@ -105,6 +108,7 @@ Write-Host "
 Ok, the cert is now copied over to APIC.  Now let's copy the PFX file over to your Hyper-V hosts.
 " -ForegroundColor Green
 
+
 #Copy Cert to user input HyperV remote Hosts
 $HyperHost = [string[]](Read-Host "Enter the MACHINE NAMEs of the HYPER-V hosts (comma separated) you want me to copy the cert to.  Example HYPERV-1,HYPERV-2").split(',') | % {$_.trim()}
 
@@ -127,12 +131,15 @@ Set-Location C:\Windows\System32
 Copy-Item C:\'Program Files (x86)'\ApicVMMService\OpflexAgent.pfx -Destination \\$h\C$\OpflexAgent.pfx -Force
 Invoke-Command -ComputerName $h -ScriptBlock {param($pfxpasswordinput) Import-PfxCertificate -Exportable -FilePath C:\OpflexAgent.pfx cert:\LocalMachine\My -Password (ConvertTo-SecureString $pfxpasswordinput -AsPlainText -Force)|Format-Table Subject, FriendlyName, Thumbprint -AutoSize} -ArgumentList $pfxpasswordinput
 
-Write-Host "DONE COPYING THIS CERT to $h!" -ForegroundColor Green
+Write-Host "DONE COPYING THIS CERT to $h!
+" -ForegroundColor Green
 }
+Write-Host "Ok, let's test the connection to APIC" -ForegroundColor Green
 
-Write-Host "
+Set-ApicConnInfo -ApicNameOrIPAddress $apic -CertificateSubjectName OpflexAgent
+Get-ApicConnInfo | Format-Table ApicAddresses, ConnectionStatus
 
-Ok, the whole process is now complete.  Please check that APIC can now communicate with SCVMM." -ForegroundColor Yellow
+Write-Host "Ok, the whole process is now complete if you see the Connection Status as CONNECTED.
+" -ForegroundColor Yellow
 
 #End Script
-
