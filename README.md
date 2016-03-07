@@ -22,7 +22,7 @@ YouTube Video of the integration script in action:  https://www.youtube.com/watc
 
 
 <HR>
-<B>ACI-SCVMM Clean Up Script</B>
+<B>ACI-SCVMM HyperV Host Clean Up Script</B>
 
 Automates the steps necessary to remove the APIC deployed vSwitch and related components on a Hyperv host(s) (via SCVMM).
 <BR>
