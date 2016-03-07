@@ -4,7 +4,7 @@
 
 Automates the steps necessary to generate, copy and install a cert for APIC to SCVMM Communication.
 <BR>
-Script by Joseph Ezerski (joezersk@cisco.com), INSBU - No guarantees on operation! v1.0 Dec 2015
+Scripts by Joseph Ezerski (joezersk@cisco.com), INSBU - No guarantees on operation! v1.0 Dec 2015
 <BR>
 Special thanks to Chris Paggen for the APIC cookie code.
 
@@ -16,3 +16,18 @@ Accepts interactive user input to generate the cert on the SCVMM server, and put
 Also imports the cert into the local machine personal certstore on the SCVMM system you run it on and mark for export.
 It will file-copy and import the cert to a list of HYPER-V hosts you specify.
 Finally, it will log into APIC and paste the contents of the cert into the admin account's x.509 object
+
+<B>ACI-SCVMM Clean Up Script</B>
+
+Automates the steps necessary to remove the APIC deployed vSwitch and related components on a Hyperv host(s) (via SCVMM).
+<BR>
+
+<B>Description:</B>
+
+For those times when you want to reset your ACI SCVMM lab to a state before integration.  This script tries to help with clean up.  
+<BR>
+Run it from the SCVMM server.  
+<BR>
+It effectively will move all VM Network Interfaces on a given host to a state of non-connected, so it can then remove the vSwitch and VTEP interfaces from the host itself.  It does not try to delete or remove any logical networks pushed by APIC. 
+
+
