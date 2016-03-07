@@ -16,7 +16,10 @@ Accepts interactive user input to generate the cert on the SCVMM server, and put
 <BR>
 Also imports the cert into the local machine personal certstore on the SCVMM system you run it on and mark for export.
 It will file-copy and import the cert to a list of HYPER-V hosts you specify.
-Finally, it will log into APIC and paste the contents of the cert into the admin account's x.509 object
+Finally, it will log into APIC and paste the contents of the cert into the admin account's x.509 object.
+<BR><BR>
+YouTube Video of the integration script in action:  https://www.youtube.com/watch?v=8JWBOcorAjA
+
 
 <HR>
 <B>ACI-SCVMM Clean Up Script</B>
