@@ -26,7 +26,7 @@ Automates the steps necessary to remove the APIC deployed vSwitch and related co
 
 For those times when you want to reset your ACI SCVMM lab to a state before integration.  This script tries to help with clean up.  
 <BR>
-Run it from the SCVMM server.  
+Run it in Powershell from the SCVMM server.  
 <BR>
 It effectively will move all VM Network Interfaces on a given host to a state of non-connected, so it can then remove the vSwitch and VTEP interfaces from the host itself.  It does not try to delete or remove any logical networks pushed by APIC. 
 
