@@ -1,5 +1,6 @@
 # ACI
 
+<HR>
 <B>ACI-SCVMM Powershell Script</B>
 
 Automates the steps necessary to generate, copy and install a cert for APIC to SCVMM Communication.
@@ -17,6 +18,7 @@ Also imports the cert into the local machine personal certstore on the SCVMM sys
 It will file-copy and import the cert to a list of HYPER-V hosts you specify.
 Finally, it will log into APIC and paste the contents of the cert into the admin account's x.509 object
 
+<HR>
 <B>ACI-SCVMM Clean Up Script</B>
 
 Automates the steps necessary to remove the APIC deployed vSwitch and related components on a Hyperv host(s) (via SCVMM).
@@ -24,7 +26,7 @@ Automates the steps necessary to remove the APIC deployed vSwitch and related co
 
 <B>Description:</B>
 
-For those times when you want to reset your ACI SCVMM lab to a state before integration.  This script tries to help with clean up.  
+For those times when you want to reset your ACI SCVMM HyoerV host to a state before ACI integration.  This script tries to help with clean up.  
 <BR>
 Run it in Powershell from the SCVMM server.  
 <BR>
