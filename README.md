@@ -29,7 +29,7 @@ Automates the steps necessary to remove the APIC deployed vSwitch and related co
 
 <B>Description:</B>
 
-For those times when you want to reset your ACI SCVMM HyoerV host to a state before ACI integration.  This script tries to help with clean up.  
+For those times when you want to reset your ACI SCVMM HyperV host to a state before ACI integration.  This script tries to help with clean up.  
 <BR>
 Run it in Powershell from the SCVMM server.  
 <BR>
