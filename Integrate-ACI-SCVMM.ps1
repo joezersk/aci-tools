@@ -78,7 +78,7 @@ $certdata
 
 Write-Host "
 OK, here is the cert output above.  I will now copy this into the APIC admin account's x.509 certificate object for you.  
-There is no need to do this manually.
+There is no need to do this manually.  For this to work you must use HTTP to talk to APIC versus the default HTTPS."
 " -foreground "yellow"
 
 #Make REST API call to APIC to get the login cookie established
