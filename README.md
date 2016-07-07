@@ -38,8 +38,8 @@ It effectively will move all VM Network Interfaces on a given host to a state of
 <HR>
 <B>ACI Factory Reset Script</B>
 
-Using the Python Spur module, this script simply uses SSH to log into a defined set of Cisco ACI APICs, Leafs and Spines and issues a factory reset and reload.  This is useful when you want or need to start over from scratch
-<BR>
+Using the Python Spur module, this script simply uses SSH to log into a defined set of Cisco ACI APICs, Leafs and Spines and issues a factory reset and reload.  This is useful when you want or need to start over from scratch.
+<BR><BR>
 You will have to edit the script to use your own IP addresses and login credentials
-<BR>
+<BR><BR>
 Please note the requirement to install the Python Spur module first.
