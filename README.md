@@ -1,9 +1,9 @@
 # Useful ACI Scripts in an Operational Environment
-Script 1.  Automate most of the SCVMM Integration
+Script 1.  Automate most of the SCVMM Integration (Powershell)
 <BR>
-Script 2.  Automate the removal of the APIC generated networking in SCVMM
+Script 2.  Automate the removal of the APIC generated networking in SCVMM (Powershell)
 <BR>
-Script 3.  Automated Factory Reset a full ACI Fabric
+Script 3.  Automated Factory Reset a full ACI Fabric (Python)
 <HR>
 <B>Integrate ACI-SCVMM Powershell Script</B>
 
