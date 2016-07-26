@@ -7,12 +7,6 @@ Script 3.  Automated Factory Reset a full ACI Fabric (Python)
 <HR>
 <B>Integrate ACI-SCVMM Powershell Script</B>
 
-Automates the steps necessary to generate, copy and install a cert for APIC to SCVMM Communication.
-<BR>
-Scripts by Joseph Ezerski (joezersk@cisco.com), INSBU - No guarantees on operation! v1.0 Dec 2015
-<BR>
-Special thanks to Chris Paggen for the APIC cookie code.
-
 <B>Description:</B>
 Automates the steps necessary to generate, copy and install a cert for APIC to SCVMM Communication.
 <BR><BR>
