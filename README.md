@@ -28,7 +28,7 @@ Accepts interactive user input to generate the cert on the SCVMM server, check f
     <li>Connection to APIC now using default HTTPS (TLSv1.2)</li>
 </ul>
 <P>
-YouTube Video of the integration script in action:  https://www.youtube.com/watch?v=8JWBOcorAjA
+YouTube Video of the v2 integration script in action:  https://youtu.be/ZYSaV9Qpz7o
 
 
 <HR>
