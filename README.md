@@ -14,14 +14,26 @@ Scripts by Joseph Ezerski (joezersk@cisco.com), INSBU - No guarantees on operati
 Special thanks to Chris Paggen for the APIC cookie code.
 
 <B>Description:</B>
-
-A quick way to generate a new cert for SCVMM and ACI Integration without the need to remember all the powershell commands. 
-Accepts interactive user input to generate the cert on the SCVMM server, and put a copy in the SCVMM Agent folder.  
-<BR>
-Also imports the cert into the local machine personal certstore on the SCVMM system you run it on and mark for export.
-It will file-copy and import the cert to a list of HYPER-V hosts you specify.
-Finally, it will log into APIC and paste the contents of the cert into the admin account's x.509 object.
+Automates the steps necessary to generate, copy and install a cert for APIC to SCVMM Communication.
 <BR><BR>
+Script by Joseph Ezerski (joezersk@cisco.com), INSBU - No guarantees on operation! New v2.0 July 2016.
+Now with more cowbell!
+<P>
+Special thanks to Chris Paggen for the APIC cookie code.
+<P>
+A quick way to generate a new cert for SCVMM and ACI Integration without the need to remember all the powershell commands.
+Accepts interactive user input to generate the cert on the SCVMM server, check for all installed ACI agents, copy the cert to a list of HyperV Hosts and place the cert into the ACI Admin account.
+
+
+<B>New in v2.0:</B>
+<ul type="square">
+    <li>More efficient and streamlined user input flow</li>
+    <li>APIC password now masked on entry</li>
+    <li>Better error checking by looking for the presence of needed ACI agents on SCVMM and HyperV hosts</li>
+    <li>Prompt to install SCVMM Agent if it is missing</li>
+    <li>Connection to APIC now using default HTTPS (TLSv1.2)</li>
+</ul>
+<P>
 YouTube Video of the integration script in action:  https://www.youtube.com/watch?v=8JWBOcorAjA
 
 
