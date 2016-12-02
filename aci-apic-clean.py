@@ -5,9 +5,9 @@
 """
 import spur
 
-# List with the host names or IP addresses
+# List with the leaf and spine host names or IP addresses
 myHost = ["10.50.129.242","10.50.129.243","10.50.129.244","10.50.129.245","10.50.129.246"]
-myApic = "10.50.129.241"
+myApic = "1.1.1.1"
 myName = "admin"
 myPassword = "cisco123"
 
