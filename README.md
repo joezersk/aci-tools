@@ -4,8 +4,11 @@ Script 1.  Automate most of the SCVMM Integration (Powershell) - New and Improve
 Script 2.  Automate the removal of the APIC generated networking in SCVMM (Powershell)
 <BR>
 Script 3.  Automated Factory Reset a full ACI Fabric (Python)
+<BR>
+Script 4.  Automated cleans up of ACI-vCenter Networking (PowerCLI)
 <HR>
 <B>Integrate ACI-SCVMM Powershell Script v2</B>
+
 
 <B>Description:</B>
 Automates the steps necessary to generate, copy and install a cert for APIC to SCVMM Communication.
