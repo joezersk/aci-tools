@@ -29,7 +29,8 @@ def main():
     shell = sshLogin(myApic,myName,myPassword)
     print("\nLogged on to APIC controller " + myApic)
     result = shell.run(["acidiag", "touch", "setup"])
-    result = shell.run(["acidiag", "reboot"])
+    result = shell.spawn(["reload", "controller", "1"])
+    result.stdin_write("Y")
     print("reloading APIC now....")
 main()
 
