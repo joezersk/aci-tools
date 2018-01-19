@@ -3,7 +3,7 @@ Script 1.  Automate most of the SCVMM Integration (Powershell) - New and Improve
 <BR>
 Script 2.  Automate the removal of the APIC generated networking in SCVMM (Powershell)
 <BR>
-Script 3.  Automated Factory Reset a full ACI Fabric (Python)
+Script 3.  Automated Factory Reset a full ACI Fabric (Python) - New and Improved v2 with sanity check! Jan 2018
 <BR>
 Script 4.  Automated clean up of ACI-vCenter DVS Networking (PowerCLI)
 <HR>
@@ -49,9 +49,11 @@ Run it in Powershell from the SCVMM server.
 It effectively will move all VM Network Interfaces on a given host to a state of non-connected, so it can then remove the vSwitch and VTEP interfaces from the host itself.  It does not try to delete or remove any logical networks pushed by APIC.
 
 <HR>
-<B>ACI Factory Reset Script</B>
+<B>ACI Factory Reset Script - Now v2</B>
 
-Using the Python Spur module, this script simply uses SSH to log into a defined set of Cisco ACI APICs, Leafs and Spines and issues a factory reset and reload.  This is useful when you want or need to start over from scratch.  Be very aware that this script will start erasing your fabric as soon as you hit enter and without any warning.  It works, but just be sure you are ready!
+Using the Python Spur module, this script simply uses SSH to log into a defined set of Cisco ACI APICs, Leafs and Spines and issues a factory reset and reload.  This is useful when you want or need to start over from scratch.  
+
+Version 2 (jan 2018) is a much better version.  It adds a failsafe check by asking a y/n question before running.  It also adds error checking by first pinging the nodes, then trying to SSH.  If either one fails it will bypass, let you know, and move on to the next node.  This is useful for when you have wiped a node but it still keeps its OOB IP address (which is default ACI behavior).  Toss version 1.  You definitely want version 2!
 <BR><BR>
 You will have to edit the script to use your own IP addresses and login credentials
 <BR><BR>
