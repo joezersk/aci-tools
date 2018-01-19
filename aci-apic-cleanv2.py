@@ -36,9 +36,10 @@ answer = query_yes_no("This is a destructive process.  Sure you want to continue
 if answer == "no":
     quit()
 
-# List with the host names or IP addresses
-myHost = ["10.50.129.242","10.50.129.243","10.50.129.244","10.50.129.245","10.50.129.246","10.50.129.247","10.50.129.248"]
-myApic = ["10.50.129.241","10.50.129.231","1.1.1.1"]
+# List with the host names or IP addresses, add or remove addresses as desired
+myHost = ["1.1.1.1","1.1.1.2","1.1.1.3","1.1.1.4","1.1.1.5","1.1.1.6","1.1.1.17"]
+myApic = ["2.1.1.1","2.1.1.2","2.1.1.3"]
+# Don't forget to set your own creds!
 myName = "admin"
 myPassword = "cisco123"
 
