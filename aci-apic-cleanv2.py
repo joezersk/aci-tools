@@ -36,19 +36,14 @@ answer = query_yes_no("This is a destructive process.  Sure you want to continue
 if answer == "no":
     quit()
 
-# List with the host names or IP addresses, add or remove addresses as desired
-myHost = ["1.1.1.1","1.1.1.2","1.1.1.3","1.1.1.4","1.1.1.5","1.1.1.6","1.1.1.17"]
-myApic = ["2.1.1.1","2.1.1.2","2.1.1.3"]
-# Don't forget to set your own creds!
+# List with the host names or IP addresses.  APIC list uses a dictionary method
+# Don't forget to enter your own IP addresses and creds - these are just dummy placeholders
+# Add or remove Apic and hosts to fit your own setup
+
+myApic = {"1":"1.1.1.1","2":"1.1.1.2","3":"1.1.1.3"}
+myHost = ["10.1.1.10","10.1.1.11","10.1.1.12","10.1.1.13","10.1.1.14","10.1.1.15","10.1.1.16"]
 myName = "admin"
 myPassword = "cisco123"
-
-if myApic[0]:
-    x = '1'
-elif myApic[1]:
-    x = "2"
-elif myApic[2]:
-    x = "3"
 
 def sshLogin(myHost,myName,myPassword):
     """ Open a connection to myHost using name myName and password myPassword and return the shell.
@@ -65,22 +60,22 @@ def sshLogin(myHost,myName,myPassword):
 def main():
     """ Call sshLogin to open a connection and the use the provided shell to issue a command
     """
-    for i in range(len(myApic)):
-        response = os.system("ping -c 1 -t 1 " + myApic[i] + " > /dev/null 2>&1")
+    for key, value in myApic.iteritems():
+        response = os.system("ping -c 1 -t 1 " + value + " > /dev/null 2>&1")
         if response == 0:
             try:
-                shell = sshLogin(myApic[i], myName, myPassword)
+                shell = sshLogin(value, myName, myPassword)
                 shell.run(["true"])
-                print("\nLogged on to APIC controller " + myApic[i])
+                print("\nLogged on to APIC controller " + value)
                 result = shell.run(["acidiag", "touch", "setup"])
-                result = shell.spawn(["reload", "controller", x])
+                result = shell.spawn(["reload", "controller", key])
                 result.stdin_write("Y")
                 print "\nErasing and reloading this APIC now..."
                 continue
             except spur.ssh.ConnectionError as error:
                 print ("\nAPIC is pingable but I cannot seem to SSH succesfully.  Moving on...")
         else:
-            print "\n" + myApic[i] + " - APIC is not reachable, moving on..."
+            print "\n" + value + " - APIC is not reachable, moving on..."
 main()
 
 # Iterate through the list myHost
@@ -92,7 +87,7 @@ def node():
             try:
                 shell = sshLogin(myHost[i],myName, myPassword)
                 shell.run(["true"])
-                print("\nLogged on to host " + myHost[i])
+                print("\nLogged on to node " + myHost[i])
                 result = shell.spawn(["acidiag", "touch", "clean"])
                 result.stdin_write("y")
                 result = shell.spawn(["reload"])
