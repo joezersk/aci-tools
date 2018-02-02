@@ -52,7 +52,7 @@ For those times when you want to reset your ACI SCVMM HyperV host to a state bef
 <BR>
 Run it in Powershell from the SCVMM server.  
 <BR>
-It effectively will move all VM Network Interfaces on a given host to a state of non-connected, so it can then remove the vSwitch and VTEP interfaces from the host itself.  It does not try to delete or remove any logical networks pushed by APIC.
+It effectively will move all VM Network Interfaces on a given host to a state of non-connected, so it can then remove the vSwitch and VTEP interfaces from the host itself.  It does not try to delete or remove any logical networks pushed by APIC.  It is probably best that after you run this script and want to remove all traces of the VMM Domain, that you do that manually from APIC.  APIC will take care to clean up all the needed SCVMM objects for you, as there are many. 
 
 <HR>
 <B>ACI Factory Reset Script - Now v2 Jan 2018</B>
