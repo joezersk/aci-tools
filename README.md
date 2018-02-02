@@ -5,7 +5,7 @@ Script 2.  Automate the removal of the APIC generated networking in SCVMM (Power
 <BR>
 Script 3.  Automated Factory Reset a full ACI Fabric (Python) - New and Improved v2 with sanity check! Jan 2018
 <BR>
-Script 4.  Automated clean up of ACI-vCenter DVS Networking (PowerCLI)
+Script 4.  Automated clean up of ACI-vCenter DVS Networkingv2 (PowerCLI)
 <HR>
 <B>Integrate ACI-SCVMM Powershell Script v3</B>
 
@@ -66,10 +66,12 @@ You will have to edit the script to use your own IP addresses and login credenti
 Please note the requirement to install the Python Spur module first.
 
 <HR>
-<B>ACI-vCenter Network Integration Clean Up Script</B>
+<B>ACI-vCenter Network Integration Clean Up Scriptv2 July 2017</B>
 
-<I>(December 2016)</I>
+<I>(December 2016, July 2017)</I>
 <BR>
-A PowerCLI script that automates moving vCenter virtual machines off of a DVS or AVS and onto a local vSwitch.  It also offers to detach the physical ESX host from the DVS/AVS.  This is useful for those times when you want to rebuild or tear down your ACI lab and don't want to spend a lot of time manually moving off the virtual machines and hosts from the DVS.  This script is not specific to ACI integration, as you can use with it with any DVS in vCenter.  
+I got tired of always having to manually move my VMs when I erase and rebuild my ACI Lab.
+
+This is a PowerCLI script that automates moving vCenter virtual machines off of a DVS or AVS and onto a local vSwitch portgroup.  It also offers to detach the physical ESX host from the DVS/AVS.  This is useful for those times when you want to rebuild or tear down your ACI lab and don't want to spend a lot of time manually moving off the virtual machines and hosts from the DVS.  This script is not specific to ACI integration, as you can use with it with any DVS in vCenter.  
 <P>
 You must run this in PowerCLI that is also logged into your vCenter server.  
