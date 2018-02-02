@@ -1,5 +1,5 @@
 # Useful ACI Scripts in an Operational Environment
-Script 1.  Automate most of the SCVMM Integration (Powershell) - New and Improved v2!
+Script 1.  Automate most of the SCVMM Integration (Powershell) - _New and Improved v3 in Feb 2018!_
 <BR>
 Script 2.  Automate the removal of the APIC generated networking in SCVMM (Powershell)
 <BR>
@@ -13,14 +13,20 @@ Script 4.  Automated clean up of ACI-vCenter DVS Networking (PowerCLI)
 <B>Description:</B>
 Automates the steps necessary to generate, copy and install a cert for APIC to SCVMM Communication.
 <BR><BR>
-Script by Joseph Ezerski (joezersk@cisco.com), INSBU - No guarantees on operation! New v2.0 July 2016.
-Now with more cowbell!
+Not an officially Cisco supported script - No guarantees on operation! New v3.0 Feb 2018.
 <P>
 Special thanks to Chris Paggen for the APIC cookie code.
 <P>
 A quick way to generate a new cert for SCVMM and ACI Integration without the need to remember all the powershell commands.
 Accepts interactive user input to generate the cert on the SCVMM server, check for all installed ACI agents, copy the cert to a list of HyperV Hosts and place the cert into the ACI Admin account.
 
+<B>New in v3.0:</B>
+<ul type="square">
+    <li>Much improved error checking and feedback for APIC Login process</li>
+    <li>Better checking of reachability of hyper-v hosts before trying cert</li>
+    <li>Added final check of SCVMM Agent Comm Channel with better messaging if it failed</li>
+</ul>
+<P>
 
 <B>New in v2.0:</B>
 <ul type="square">
