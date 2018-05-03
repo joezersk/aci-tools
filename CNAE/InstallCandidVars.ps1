@@ -1,7 +1,6 @@
 ﻿# A simple script to auto-deploy Candid OVAs in vCenter.  Note you must run this in PowerCLI
-# Note the hardcoded variables like IP Addr, Mask, Gateway, Cluster, datastore, etc that you will need to edit to your setup
-# While I could set up params to ask you, I wanted something quick and dirty and automatic ;)
-# Joseph Ezerski (joezersk@cisco.com), INSBU, Sept-2017
+# While I could set up params to prompt you, I wanted something quick and dirty and automatic ;)
+# Joseph Ezerski (joezersk@cisco.com), INSBU, Sept-2017, May-2018
 
 #Import Variables File
 . ./CandidVars.ps1
