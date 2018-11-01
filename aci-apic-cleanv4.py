@@ -56,8 +56,9 @@ def sshLogin(myHost,myName,myPassword):
     shell = spur.SshShell(hostname=myHost,
                           username=myName,
                           password=myPassword,
+                          connect_timeout=5,
                           missing_host_key=spur.ssh.MissingHostKey.accept,
-                          shell_type=spur.ssh.ShellTypes.minimal)
+                          shell_type=spur.ssh.ShellTypes.sh)
     return shell
 
 def main():
