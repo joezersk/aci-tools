@@ -70,6 +70,8 @@ Please note the requirement to install the Python Spur module first.
 
 <I>(December 2016, July 2017)</I>
 <BR>
+    <I>(October 2018) <B>Update:</B>  Use v3 of this script if you are running Powershell 6.x and later</I>
+<BR>
 I got tired of always having to manually move my VMs when I erase and rebuild my ACI Lab.
 
 This is a PowerCLI script that automates moving vCenter virtual machines off of a DVS or AVS and onto a local vSwitch portgroup.  It also offers to detach the physical ESX host from the DVS/AVS.  This is useful for those times when you want to rebuild or tear down your ACI lab and don't want to spend a lot of time manually moving off the virtual machines and hosts from the DVS.  This script is not specific to ACI integration, as you can use with it with any DVS in vCenter.  
