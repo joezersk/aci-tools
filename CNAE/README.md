@@ -2,7 +2,7 @@
 ---
 **Prerequisites:**
 
-1. Vmware's PowerCLI installed where you will run this script
+1. Vmware's PowerCLI installed where you will run this script (*Note, there is now Powershell and PowerCLI for Macintosh!*)
 2. Be logged into your vCenter via PowerCLI (*i.e use the Connect-VIServer x.x.x.x command*)
 ---
 
