@@ -61,7 +61,7 @@ Using the Python Spur module, this script simply uses SSH to log into a defined 
 
 Version 6 (March 2019) is a much better version.  It adds a failsafe check by asking a y/n question before running.  It also adds error checking by first pinging the nodes, then trying to SSH.  If either one fails it will bypass, let you know, and move on to the next node.  This is useful for when you have wiped a node but it still keeps its OOB IP address (which is default ACI behavior).  I also added some colors to serve as a better way to visually verify if you missed a node or anything.  Toss older versions, you want the latest!
 <BR><BR>
-You will have to edit the script to use your own ACI IP addresses (OOB for all APICs and Nodes) and login credentials
+You will have to edit the script to use your own ACI IP addresses (OOB for all APICs and Nodes) and login credentials.  This is done in the variables called *'MyApic'* and *'MyNode'*.
 <BR><BR>
 Please note the requirement to install the Python Spur module first.
 
@@ -77,3 +77,6 @@ I got tired of always having to manually move my VMs when I erase and rebuild my
 This is a PowerCLI script that automates moving vCenter virtual machines off of a DVS or AVS and onto a local vSwitch portgroup.  It also offers to detach the physical ESX host from the DVS/AVS.  This is useful for those times when you want to rebuild or tear down your ACI lab and don't want to spend a lot of time manually moving off the virtual machines and hosts from the DVS.  This script is not specific to ACI integration, as you can use with it with any DVS in vCenter.  
 <P>
 You must run this in PowerCLI that is also logged into your vCenter server.  
+<P>
+ Note that you can now natively run Powershell and PowerCLI on a Mac or Linux machine!
+    <P>
