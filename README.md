@@ -55,13 +55,13 @@ Run it in Powershell from the SCVMM server.
 It effectively will move all VM Network Interfaces on a given host to a state of non-connected, so it can then remove the vSwitch and VTEP interfaces from the host itself.  It does not try to delete or remove any logical networks pushed by APIC.  It is probably best that after you run this script and want to remove all traces of the VMM Domain, that you do that manually from APIC.  APIC will take care to clean up all the needed SCVMM objects for you, as there are many. 
 
 <HR>
-<B>ACI Factory Reset Script - Now v2 Jan 2018</B>
+<B>ACI Factory Reset Script - Now v6 Mar 2019</B>
 
 Using the Python Spur module, this script simply uses SSH to log into a defined set of Cisco ACI APICs, Leafs and Spines and issues a factory reset and reload.  This is useful when you want or need to start over from scratch.  
 
-Version 2 (jan 2018) is a much better version.  It adds a failsafe check by asking a y/n question before running.  It also adds error checking by first pinging the nodes, then trying to SSH.  If either one fails it will bypass, let you know, and move on to the next node.  This is useful for when you have wiped a node but it still keeps its OOB IP address (which is default ACI behavior).  Toss version 1.  You definitely want version 2!
+Version 6 (March 2019) is a much better version.  It adds a failsafe check by asking a y/n question before running.  It also adds error checking by first pinging the nodes, then trying to SSH.  If either one fails it will bypass, let you know, and move on to the next node.  This is useful for when you have wiped a node but it still keeps its OOB IP address (which is default ACI behavior).  I also added some colors to serve as a better way to visually verify if you missed a node or anything.  Toss older versions, you want the latest!
 <BR><BR>
-You will have to edit the script to use your own IP addresses and login credentials
+You will have to edit the script to use your own ACI IP addresses (OOB for all APICs and Nodes) and login credentials
 <BR><BR>
 Please note the requirement to install the Python Spur module first.
 
