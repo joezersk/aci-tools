@@ -2,11 +2,12 @@
 
 """ Script to SSH into APIC and each leaf and spine via OOB management port and factory reset and reload
     Original script by Palm 2016-04-29 - Yes/No function from Active State recipe 577058 (Trent Mick)
-    Modifications for an ACI Fabric Reset by J.Ezerski 2016-05-02 and 07-07-2016, Updated to v2 Jan 2018
+    Modifications for an ACI Fabric Reset by J.Ezerski 2016-05-02 and 07-07-2016, v2 Jan 2018, v6 Mar 2019
 """
 import spur
 import os
 import sys
+
 
 class bcolors:
     OKGREEN = '\033[92m'
@@ -101,6 +102,7 @@ def node():
         response2 = os.system("ping -c 1 -t 1 " + myNode[i] + " > /dev/null 2>&1")
         if response2 == 0:
             try:
+                rdns = socket.gethostbyaddr(myNode[i])
                 shell = sshLogin(myNode[i],myName, myPassword)
                 shell.run(["true"])
                 print("\nLogged on to node " + myNode[i])
