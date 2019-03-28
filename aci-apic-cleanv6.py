@@ -102,7 +102,6 @@ def node():
         response2 = os.system("ping -c 1 -t 1 " + myNode[i] + " > /dev/null 2>&1")
         if response2 == 0:
             try:
-                rdns = socket.gethostbyaddr(myNode[i])
                 shell = sshLogin(myNode[i],myName, myPassword)
                 shell.run(["true"])
                 print("\nLogged on to node " + myNode[i])
