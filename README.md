@@ -66,11 +66,14 @@ You will have to edit the script to use your own ACI IP addresses (OOB for all A
 Please note the requirement to install the Python Spur module first.
 
 <HR>
-<B>ACI-vCenter Network Integration Clean Up Scriptv2 July 2017</B>
+<B>ACI-vCenter Network Integration Clean Up Scriptv4 March 2020</B>
 
 <I>(December 2016, July 2017)</I>
 <BR>
     <B>Update: (October 2018)</B><I> Use v3 of this script if you are running Powershell 6.x and later</I>
+<BR><BR>
+<BR>
+    <B>Update: (March 2020)</B><I> Use v4 of this script if you are running Powershell 6.x and later.  Tested on Powershell Core / PowerCLI 11.5 for MacOS, Windows8 and Ubuntu Linux</I>
 <BR><BR>
 I got tired of always having to manually move my VMs when I erase and rebuild my ACI Lab.
 
