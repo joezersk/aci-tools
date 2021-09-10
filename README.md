@@ -59,7 +59,7 @@ It effectively will move all VM Network Interfaces on a given host to a state of
 
 Using the Python Spur module, this script simply uses SSH to log into a defined set of Cisco ACI APICs, Leafs and Spines and issues a factory reset and reload.  This is useful when you want or need to start over from scratch.  
 
-Version 6 (March 2019) is a much better version.  It adds a failsafe check by asking a y/n question before running.  It also adds error checking by first pinging the nodes, then trying to SSH.  If either one fails it will bypass, let you know, and move on to the next node.  This is useful for when you have wiped a node but it still keeps its OOB IP address (which is default ACI behavior).  I also added some colors to serve as a better way to visually verify if you missed a node or anything.  Toss older versions, you want the latest!
+Version 7 (March 2019) is a much better version.  It adds a failsafe check by asking a y/n question before running.  It also adds error checking by first pinging the nodes, then trying to SSH.  If either one fails it will bypass, let you know, and move on to the next node.  This is useful for when you have wiped a node but it still keeps its OOB IP address (which is default ACI behavior).  I also added some colors to serve as a better way to visually verify if you missed a node or anything.  Toss older versions, you want the latest!
 <BR><BR>
 You will have to edit the script to use your own ACI IP addresses (OOB for all APICs and Nodes) and login credentials.  This is done in the variables called *'MyApic'* and *'MyNode'*.
 <BR><BR>
